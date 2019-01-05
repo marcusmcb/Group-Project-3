@@ -3,7 +3,7 @@ Group Project 3 repo for UCI Coding BootCamp.
 
 NPMs required -
 
-* bcryptjs
+* bcryptjs (password validation)
 * body-parser
 * express
 * gravatar (for user profile picture)
