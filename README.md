@@ -36,9 +36,9 @@
 
 * under scripts you will need to add the following lines:
 
-"client-install": "npm install --prefix client"
-"client": "npm start --prefix client"
-"dev": "concurrently \"npm run server\" \"npm run client\""
+* "client-install": "npm install --prefix client"
+* "client": "npm start --prefix client"
+* "dev": "concurrently \"npm run server\" \"npm run client\""
 
 
 
