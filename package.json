@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcusmcb/devconnector.git"
+    "url": "git+https://github.com/marcusmcb/Group-Project-3.git"
   },
   "author": "Marcus McBride",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marcusmcb/devconnector/issues"
+    "url": "https://github.com/marcusmcb/Group-Project-3/issues"
   },
-  "homepage": "https://github.com/marcusmcb/devconnector#readme"
+  "homepage": "https://github.com/marcusmcb/Group-Project-3#readme"
 }
