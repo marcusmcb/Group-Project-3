@@ -31,5 +31,11 @@ NPMs required (client folder/front end) -
 * redux
 * redux-thunk
 
+You will have 2 package.json files, one in the root folder, the other in the client folder.  Add the following line into the package.json file found in the client folder:
+
+"proxy": "http://localhost:5000"
+
+Without it, the app will not start.  There's a NPM called Concurrently installed that allows the two ends of the app to run together without having to "start" the app from two different terminals.
+
 Once all NPMs have been properly installed use "npm run dev" to start the app from the root folder (not the client folder).
 
