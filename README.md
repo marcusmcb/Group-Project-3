@@ -31,5 +31,5 @@ NPMs required (client folder/front end) -
 * redux
 * redux-thunk
 
-
+Once all NPMs have been properly installed use "npm run dev" to start the app from the root folder (not the client folder).
 
