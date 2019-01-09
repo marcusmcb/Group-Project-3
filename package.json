@@ -1,32 +1,36 @@
 {
-  "name": "group-project-3",
+  "name": "devconnector",
   "version": "1.0.0",
-  "description": "Group Project 3 repo for UCI Coding BootCamp.",
+  "description": "Social network for developers",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marcusmcb/Group-Project-3.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/marcusmcb/Group-Project-3/issues"
-  },
-  "homepage": "https://github.com/marcusmcb/Group-Project-3#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.4.2",
+    "mongoose": "^5.3.14",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "validator": "^10.10.0"
-  }
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusmcb/devconnector.git"
+  },
+  "author": "Marcus McBride",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcusmcb/devconnector/issues"
+  },
+  "homepage": "https://github.com/marcusmcb/devconnector#readme"
 }

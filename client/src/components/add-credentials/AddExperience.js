@@ -28,7 +28,7 @@ class AddExperience extends Component {
      }
 
      componentWillReceiveProps(nextProps) {
-          if (nextProps.errors) {
+          if(nextProps.errors) {
                this.setState({ errors: nextProps.errors })
           }
      }

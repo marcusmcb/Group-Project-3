@@ -14,9 +14,9 @@ const InputGroup = ({
      return (
           <div className="input-group mb-3">
                <div className="input-group-prepend">
-                    <span className="input-group-text">
-                         <i className={icon} />
-                    </span>
+               <span className="input-group-text">
+               <i className={icon} />
+               </span>
                </div>
                <input
                     className={classnames('form-control form-control-lg', {
@@ -26,8 +26,8 @@ const InputGroup = ({
                     name={name}
                     value={value}
                     onChange={onChange}
-               />
-               {error && (<div className="invalid-feedback">{error}</div>)}
+               />               
+               {error && (<div className="invalid-feedback">{error}</div>)}               
           </div>
      )
 }
