@@ -16,7 +16,7 @@
 * npm i redux
 * npm i redux-thunk
 
-* you will also need to insert the following line in your client folder's package.json file (can be placed anywhere):
+#### You will also need to insert the following line in your client folder's package.json file (can be placed anywhere):
 
 "proxy": "http://localhost:5000"
 
@@ -34,7 +34,7 @@
 * npm i passport-jwt
 * npm i validator
 
-* under scripts you will need to add the following lines:
+#### Under scripts you will need to add the following lines:
 
 * "client-install": "npm install --prefix client"
 * "client": "npm start --prefix client"
