@@ -1,7 +1,7 @@
 # Group-Project-3
 Group Project 3 repo for UCI Coding BootCamp.
 
-NPMs required (main directory/back end) -
+NPMs required (main directory/back end - these go in the root folder) -
 
 * bcryptjs (password validation)
 * body-parser
@@ -16,7 +16,7 @@ NPMs required (main directory/back end) -
 * react-scripts
 * react-dom
 
-NPMs required (client folder/front end) -
+NPMs required (client folder/front end - these go in the client folder) -
 
 * axios
 * classnames
