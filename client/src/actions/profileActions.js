@@ -4,7 +4,8 @@ import {
      PROFILE_LOADING,
      CLEAR_CURRENT_PROFILE,
      GET_ERRORS,
-     SET_CURRENT_USER
+     SET_CURRENT_USER,
+     GET_PROFILES
 } from './types';
 
 // get current profile
@@ -62,6 +63,58 @@ export const addEducation = (eduData, history) => dispatch => {
                     payload: err.response.data
                })
           )
+}
+
+// delete an experience
+export const deleteExperience = id => dispatch => {
+     axios
+          .delete(`/api/profile/experience/${id}`)
+          .then(res => 
+               dispatch({
+                    type: GET_PROFILE,
+                    payload: res.data
+               })
+               )
+               .catch(err => 
+                    dispatch({
+                         type: GET_ERRORS,
+                         payload: err.response.data
+                    }))
+}
+
+// delete education
+export const deleteEducation = id => dispatch => {
+     axios
+          .delete(`/api/profile/education/${id}`)
+          .then(res =>
+               dispatch({
+                    type: GET_PROFILE,
+                    payload: res.data
+               })
+          )
+          .catch(err =>
+               dispatch({
+                    type: GET_ERRORS,
+                    payload: err.response.data
+               }))
+}
+
+// get all profiles
+export const getProfiles = () => dispatch => {
+     dispatch(setProfileLoading());
+     axios
+          .get('/api/profile/all')
+          .then(res =>
+               dispatch({
+                    type: GET_PROFILES,
+                    payload: res.data
+               })
+          )
+          .catch(err =>
+               dispatch({
+                    type: GET_PROFILES,
+                    payload: null
+               }))
 }
 
 // delete account & profile

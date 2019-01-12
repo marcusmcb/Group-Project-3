@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
@@ -57,7 +57,7 @@ class CreateProfile extends Component {
           // checks individual social links
           profile.twitter = !isEmpty(profile.social.twitter) ? profile.social.twitter : '';
           profile.facebook = !isEmpty(profile.social.facebook) ? profile.social.facebook : '';
-          profile.linked = !isEmpty(profile.social.linked) ? profile.social.linked : '';
+          profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : '';
           profile.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : '';
           profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : '';
 
@@ -180,6 +180,8 @@ class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+              <Link to='/dashboard' className="btn btn-light">
+                Go Back</Link>
               <h1 className="display-4 text-center">Edit Your Profile</h1>              
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
