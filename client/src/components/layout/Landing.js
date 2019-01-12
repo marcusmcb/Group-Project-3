@@ -18,8 +18,9 @@ class Landing extends Component {
                          <div className="container">
                               <div className="row">
                                    <div className="col-md-12 text-center">
-                                        <h1 className="display-3 mb-4">Developer Connector</h1>
-                                        <p className="lead"> Create a developer profile/portfolio, share posts and get help from other developers</p>
+                                        <h1 className="display-3 mb-4">Eventagious</h1>
+                                        <p className="lead">A social network and community for event professionals to connect and contract events</p>
+                                        <p>Create an account with us to share your contact info, background and experience.  You can search for other event professionals within out app, connect and communicate with one another to book future projects and events.</p>
                                         <hr />
                                         <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
                                         <Link to="/login" className="btn btn-lg btn-light">Login</Link>
