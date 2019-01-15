@@ -1,7 +1,7 @@
 {
-  "name": "devconnector",
+  "name": "group-project-3",
   "version": "1.0.0",
-  "description": "Social network for developers",
+  "description": "A social network for event professionals",
   "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
