@@ -278,7 +278,7 @@ class CreateProfile extends Component {
                   >
                     Add Social Network Links
                   </button>
-                  <span className="text-muted">Optional</span>
+                  <span className="text-muted ml-2">(Optional)</span>
                 </div>
                 {socialInputs}
                 <input
