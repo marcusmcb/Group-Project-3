@@ -86,6 +86,8 @@ export const addEducation = (eduData, history) => dispatch => {
     );
 };
 
+
+
 // Delete Experience
 export const deleteExperience = id => dispatch => {
   axios
