@@ -4,23 +4,40 @@ import PropTypes from 'prop-types';
 import Spinner from '../common/Spinner';
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/profileActions';
+import ProfilesSearch from '../profiles/ProfilesSearch';
 
 class Profiles extends Component {
   componentDidMount() {
     this.props.getProfiles();
   }
 
+  state = {
+    searchTerm: ""
+  }
+
   render() {
     const { profiles, loading } = this.props.profile;
-    let profileItems;
+    let profileItems = [];
 
     if (profiles === null || loading) {
       profileItems = <Spinner />;
+
     } else {
+      
       if (profiles.length > 0) {
-        profileItems = profiles.map(profile => (
-          <ProfileItem key={profile._id} profile={profile} />
-        ));
+        profiles.forEach(profile => {
+          let tmpAr = profile.skills.slice(0);
+          profile.location && tmpAr.push(profile.location);
+          tmpAr = tmpAr.map(e => e.toLowerCase().trim());
+          const isValid = tmpAr.find((val) => { 
+            return RegExp(`.*${this.state.searchTerm}.*`).test(val);
+          });
+          console.log(isValid);
+          if(isValid !== undefined) {
+            profileItems.push(<ProfileItem key={profile._id} profile={profile} />)
+          }
+        });
+        
       } else {
         profileItems = <h4>No profiles found.</h4>;
       }
@@ -35,6 +52,7 @@ class Profiles extends Component {
               <p className="lead text-center">
                 Browse and connect with other event professionals.
               </p>
+              <ProfilesSearch handleSearch={e => this.setState({ searchTerm: e })} />
               {profileItems}
             </div>
           </div>
