@@ -31,7 +31,14 @@ profileSearch = (e) => {
   render() {
     return (
       <div>
-           <input type="text" className="input" onChange={this.profileSearch} placeholder="Search Profiles" />        
+           <div className="post-form mb-3">
+           <div className="card card-info">
+           <div className="card-header bg-info text-center text-white">Search for an event professional by either their specialty or their location.</div>
+           <div className="card-body m-auto">
+           <input type="text" className="input" onChange={this.profileSearch} placeholder="Search Profiles" />
+                        </div>        
+          </div>
+          </div>
       </div>
     )
   }
