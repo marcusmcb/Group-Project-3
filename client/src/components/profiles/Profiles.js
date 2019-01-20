@@ -18,7 +18,7 @@ class Profiles extends Component {
   render() {
     const { profiles, loading } = this.props.profile;
     let profileItems = [];
-
+    // loads spinner as profiles are being retrieved
     if (profiles === null || loading) {
       profileItems = <Spinner />;
 
@@ -26,13 +26,14 @@ class Profiles extends Component {
       
       if (profiles.length > 0) {
         profiles.forEach(profile => {
+          // profiles search function
           let tmpAr = profile.skills.slice(0);
           profile.location && tmpAr.push(profile.location);
           tmpAr = tmpAr.map(e => e.toLowerCase().trim());
+          // executes search function
           const isValid = tmpAr.find((val) => { 
             return RegExp(`.*${this.state.searchTerm}.*`).test(val);
-          });
-          console.log(isValid);
+          });          
           if(isValid !== undefined) {
             profileItems.push(<ProfileItem key={profile._id} profile={profile} />)
           }
