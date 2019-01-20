@@ -22,7 +22,8 @@ class Landing extends Component {
                   {' '}
                   A social media and networking site for event professionals.
                 </p>
-                <p>Create an account and connect with other event professionals to collaborate and book events.</p>
+                <p>Eventagious is a place for photographers, DJs, videographers, emcees, stylists, caterers, security staff and other event service professionals to connect with one another.</p>
+                <p>Create an account and connect with other professionals and event planners to collaborate and book events.</p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">
                   Sign Up
