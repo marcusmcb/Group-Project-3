@@ -20,10 +20,10 @@ class ProfileAbout extends Component {
       <div className="row">
         <div className="col-md-12">
           <div className="card card-body bg-light mb-3">
-            <h3 className="text-center text-info">{firstName}'s Bio</h3>
+            <h3 className="text-center text-info">About {firstName}</h3>
             <p className="lead text-center" style={{ whiteSpace: 'pre-wrap' }}>
               {isEmpty(profile.bio) ? (
-                <span>{firstName} does not have a bio</span>
+                <span>{firstName} does not have a bio.</span>
               ) : (
                 <span>{profile.bio}</span>
               )}
