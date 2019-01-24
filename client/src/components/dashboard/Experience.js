@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { deleteExperience } from '../../actions/profileActions';
+import '../../App.css';
 
 class Experience extends Component {
   onDeleteClick(id) {
@@ -27,13 +28,12 @@ class Experience extends Component {
             onClick={this.onDeleteClick.bind(this, exp._id)}
             className="btn btn-danger"
           >
-            Delete
-          </button>
+          Delete</button>
         </td>
       </tr>
     ));
     return (
-      <div>
+      <div className="table-responsive">
         <h4 className="mb-4">Experience Credentials</h4>
         <table className="table">
           <thead>

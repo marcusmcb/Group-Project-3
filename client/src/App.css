@@ -63,3 +63,7 @@ img {
 #AvatarHeader {
   align-content: center;
 }
+
+.table-nonfluid {
+   width: auto !important;
+}
