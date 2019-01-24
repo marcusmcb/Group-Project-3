@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import ProfileHeader from './ProfileHeader';
 import ProfileAbout from './ProfileAbout';
 import ProfileCreds from './ProfileCreds';
-import ProfileGithub from './ProfileGithub';
 import Spinner from '../common/Spinner';
 import { getProfileByHandle } from '../../actions/profileActions';
 
@@ -25,7 +24,6 @@ class Profile extends Component {
   render() {
     const { profile, loading } = this.props.profile;
     let profileContent;
-
     if (profile === null || loading) {
       profileContent = <Spinner />;
     } else {
@@ -41,13 +39,9 @@ class Profile extends Component {
           </div>
           <ProfileHeader profile={profile} />
           <ProfileAbout profile={profile} />
-          <ProfileCreds
-            education={profile.education}
+          <ProfileCreds            
             experience={profile.experience}
-          />
-          {/* {profile.githubusername ? (
-            <ProfileGithub username={profile.githubusername} />
-          ) : null} */}
+          />          
         </div>
       );
     }

@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import { deleteExperience } from '../../actions/profileActions';
+import { deleteExperience, getCurrentExperience } from '../../actions/profileActions';
 import '../../App.css';
 
 class Experience extends Component {
   onDeleteClick(id) {
     this.props.deleteExperience(id);
+  }
+  onEditClick(id) {
+    this.props.getCurrentExperience(id);
   }
 
   render() {
@@ -25,13 +28,19 @@ class Experience extends Component {
         </td>
         <td>
           <button
+            onClick={this.onEditClick.bind(this, exp._id)}
+            className="btn btn-secondary">
+            Edit</button>
+        </td>
+        <td>
+          <button
             onClick={this.onDeleteClick.bind(this, exp._id)}
-            className="btn btn-danger"
-          >
+            className="btn btn-danger">
           Delete</button>
         </td>
       </tr>
     ));
+    
     return (
       <div className="table-responsive">
         <h4 className="mb-4">Experience Credentials</h4>
@@ -52,7 +61,8 @@ class Experience extends Component {
 }
 
 Experience.propTypes = {
-  deleteExperience: PropTypes.func.isRequired
+  deleteExperience: PropTypes.func.isRequired,
+  getCurrentExperience: PropTypes.func.isRequired
 };
 
-export default connect(null, { deleteExperience })(Experience);
+export default connect(null, { deleteExperience, getCurrentExperience })(Experience);

@@ -35,33 +35,7 @@ class ProfileCreds extends Component {
         </p>
       </li>
     ));
-
-    const eduItems = education.map(edu => (
-      <li key={edu._id} className="list-group-item">
-        <h4>{edu.school}</h4>
-        <p>
-          <Moment format="MM/DD/YYYY">{edu.from}</Moment> -
-          {edu.to === null ? (
-            ' Now'
-          ) : (
-            <Moment format="MM/DD/YYYY">{edu.to}</Moment>
-          )}
-        </p>
-        <p>
-          <strong>Degree:</strong> {edu.degree}
-        </p>
-        <p>
-          <strong>Field Of Study:</strong> {edu.fieldofstudy}
-        </p>
-        <p>
-          {edu.description === '' ? null : (
-            <span>
-              <strong>Description: </strong> {edu.description}
-            </span>
-          )}
-        </p>
-      </li>
-    ));
+    
     return (
       <div className="row">
         <div className="col-md-12">
@@ -72,15 +46,6 @@ class ProfileCreds extends Component {
             <p className="text-center">No Experience Listed</p>
           )}
         </div>
-
-        {/* <div className="col-md-6">
-          <h3 className="text-center text-info">Education</h3>
-          {eduItems.length > 0 ? (
-            <ul className="list-group">{eduItems}</ul>
-          ) : (
-            <p className="text-center">No Education Listed</p>
-          )}
-        </div> */}
       </div>
     );
   }
