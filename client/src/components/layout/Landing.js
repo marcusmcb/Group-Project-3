@@ -17,12 +17,12 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">Eventagious</h1>
+                <h1 className="display-3 mb-4">Eventageous</h1>
                 <p className="lead">
                   {' '}
                   A social media and networking site for event professionals.
                 </p>
-                <p>Eventagious is a place for photographers, DJs, videographers, emcees, stylists, caterers, security staff and other event service professionals to connect with one another.</p>
+                <p>Eventageous is a place for photographers, DJs, videographers, emcees, stylists, caterers, security staff and other event service professionals to connect with one another.</p>
                 <p>Create an account and connect with other professionals and event planners to collaborate and book events.</p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">

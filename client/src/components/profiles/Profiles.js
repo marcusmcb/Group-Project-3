@@ -51,7 +51,7 @@ class Profiles extends Component {
             <div className="col-md-12">
               <h1 className="display-6 text-center">Event Professionals</h1>
               <p className="lead text-center">
-                Browse and connect with other Eventagious members.
+                Browse and connect with other Eventageous members.
               </p>
               <ProfilesSearch handleSearch={e => this.setState({ searchTerm: e })} />
               {profileItems}
