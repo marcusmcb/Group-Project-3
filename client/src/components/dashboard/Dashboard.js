@@ -29,20 +29,22 @@ class Dashboard extends Component {
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
           <div>
-            <p className="lead text-muted">
+            <p className="lead text-muted text-center">
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
-            <Experience experience={profile.experience} />            
-            <div style={{ marginBottom: '60px' }} />
+            <Experience experience={profile.experience} />
+            <div className="container text-center">  
+            <div style={{ marginBottom: '30px' }} />
             <button
               onClick={this.onDeleteClick.bind(this)}
               className="btn btn-danger">
               Delete My Account
             </button>
           </div>
+          </div>
         );
-        
+
       } else {
         // User is logged in but has no profile
         dashboardContent = (
@@ -62,7 +64,7 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
+              <h1 className="display-6 text-center">Dashboard</h1>
               {dashboardContent}
             </div>
           </div>
