@@ -20,18 +20,14 @@ const ProfileSchema = new Schema({
      location: {
           type: String,
      },
-     status: {
+     profession: {
           type: String,
           required: true
      },
      skills: {
           type: [String],
-          required: true
      },
-     bio: {
-          type: String,
-     },
-     githubusername: {
+     language: {
           type: String,
      },
      experience: [

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
-import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import { createProfile } from '../../actions/profileActions';
@@ -13,14 +12,15 @@ class CreateProfile extends Component {
     super(props);
     this.state = {
       displaySocialInputs: false,
+      displayOtherProfession: false,
       handle: '',
       company: '',
       website: '',
       location: '',
-      status: '',
+      profession: '',
+      professionInput: '',
       skills: '',
-      
-      bio: '',
+      language: '',
       twitter: '',
       facebook: '',
       linkedin: '',
@@ -30,6 +30,7 @@ class CreateProfile extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.onChangeProfession = this.onChangeProfession.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -47,10 +48,9 @@ class CreateProfile extends Component {
       company: this.state.company,
       website: this.state.website,
       location: this.state.location,
-      status: this.state.status,
+      profession: this.state.profession,
       skills: this.state.skills,
-      
-      bio: this.state.bio,
+      language: this.state.language,
       twitter: this.state.twitter,
       facebook: this.state.facebook,
       linkedin: this.state.linkedin,
@@ -65,10 +65,35 @@ class CreateProfile extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  onChangeProfession = e => {
+    console.log(e.target.value)
+    this.setState({ [e.target.name]: e.target.value });
+    if ( e.target.value === 'Other' ) {
+      console.log('other')
+      this.setState({ displayOtherProfession: true });
+    } else {
+      this.setState({ profession: e.target.value})
+    }
+  }
+
   render() {
-    const { errors, displaySocialInputs } = this.state;
+    const { errors, displaySocialInputs, displayOtherProfession } = this.state;
 
     let socialInputs;
+    let professionInput;
+
+    if (displayOtherProfession) {
+      professionInput = (
+        <TextFieldGroup
+          placeholder="Profession"
+          name="profession"
+          value={this.state.profession}
+          onChange={this.onChange}
+          error={errors.profession}
+          info=""
+        />
+      )
+    }
 
     if (displaySocialInputs) {
       socialInputs = (
@@ -121,17 +146,22 @@ class CreateProfile extends Component {
       );
     }
 
-    // Select options for status
+    // Select options for profession
     const options = [
-      { label: '* Select Professional Status', value: 0 },
+      { label: '* Select Profession', value: 0 },
+      { label: 'Caterer', value: 'Caterer' },
+      { label: 'Comedian', value: 'Comedian' },
       { label: 'DJ', value: 'DJ' },
-      { label: 'Photographer', value: 'Photographer' },
-      { label: 'Videographer', value: 'Videographer' },
       { label: 'Emcee', value: 'Emcee' },
-      { label: 'Band/Musician', value: 'Band/Musician' },
+      { label: 'Musician- Band', value: 'Musician- Band' },
+      { label: 'Musician- Instrument Soloist', value: 'Musician- Instrument Soloist' },
+      { label: 'Musician- Singer ', value: 'Musician- Singer ' },
+      { label: 'Photo Booth', value: 'Photo Booth' },
+      { label: 'Photographer', value: 'Photographer' },
+      { label: 'Security', value: 'Security' },
       { label: 'Stylist', value: 'Stylist' },
-      { label: 'Security Specialist', value: 'Security Specialist' },
-      { label: 'Caterer', value: 'Caterer' }
+      { label: 'Videographer', value: 'Videographer' },
+      { label: 'Other', value: 'Other' }
     ];
 
     return (
@@ -154,14 +184,15 @@ class CreateProfile extends Component {
                   info="A unique handle for your profile URL. Your full name, company name, nickname"
                 />
                 <SelectListGroup
-                  placeholder="Status"
-                  name="status"
-                  value={this.state.status}
-                  onChange={this.onChange}
+                  placeholder="Profession"
+                  name="professionInput"
+                  value={this.state.professionInput}
+                  onChange={this.onChangeProfession}
                   options={options}
-                  error={errors.status}
-                  info="Give us an idea of where you are at in your career"
+                  error={errors.profession}
+                  info="Let us know your profession."
                 />
+                {professionInput}
                 <TextFieldGroup
                   placeholder="Company"
                   name="company"
@@ -187,22 +218,21 @@ class CreateProfile extends Component {
                   info="City or city & state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
-                  placeholder="* Skills"
+                  placeholder="Skills"
                   name="skills"
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                    good with kids, specialize in large groups, etc."
                 />
-                
-                <TextAreaFieldGroup
-                  placeholder="Short Bio"
-                  name="bio"
-                  value={this.state.bio}
+                <TextFieldGroup
+                  placeholder="Language(s)"
+                  name="language"
+                  value={this.state.language}
                   onChange={this.onChange}
-                  error={errors.bio}
-                  info="Tell us a little about yourself"
+                  error={errors.language}
+                  info="Let us know if you are fluent in other languages."
                 />
 
                 <div className="mb-3">
@@ -239,10 +269,12 @@ CreateProfile.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => {
+  return {
   profile: state.profile,
   errors: state.errors
-});
+  }
+};
 
 export default connect(mapStateToProps, { createProfile })(
   withRouter(CreateProfile)

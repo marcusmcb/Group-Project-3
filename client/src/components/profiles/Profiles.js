@@ -5,6 +5,7 @@ import Spinner from '../common/Spinner';
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/profileActions';
 import ProfilesSearch from '../profiles/ProfilesSearch';
+import DropDown from './DropDown'
 
 class Profiles extends Component {
   componentDidMount() {
@@ -49,11 +50,11 @@ class Profiles extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-6 text-center">Event Professionals</h1>
               <p className="lead text-center">
                 Browse and connect with other Eventageous members.
               </p>
               <ProfilesSearch handleSearch={e => this.setState({ searchTerm: e })} />
+              <DropDown />
               {profileItems}
             </div>
           </div>
