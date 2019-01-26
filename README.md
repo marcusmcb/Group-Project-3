@@ -17,9 +17,9 @@ React/Redux
 
 Built as part of UCI's coding bootcamp by:
 
-Marcus McBride
-Tanya Schwartz
-Hope Gratrix
-Ray Curry, III
+* Marcus McBride
+* Tanya Schwartz
+* Hope Gratrix
+* Ray Curry, III
 
 2018.
