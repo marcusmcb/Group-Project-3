@@ -1,10 +1,10 @@
-#Eventagious
+# Eventagious
 
-###Welcome to Eventagious!
+### Welcome to Eventagious!
 
 This app is a social media and networking app for event professionals - DJs, emcees, photographers, stylists, security specialists, videographers, etc - to link up with one another as well as book events through event planners and coordinators through the app.
 
-###Link To The App:
+### Link To The App:
 
 https://dashboard.heroku.com/apps/mysterious-oasis-22555
 
