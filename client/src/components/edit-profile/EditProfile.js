@@ -18,9 +18,9 @@ class CreateProfile extends Component {
       company: '',
       website: '',
       location: '',
-      status: '',
+      profession: '',
       skills: '',
-      
+      language: '',
       bio: '',
       twitter: '',
       facebook: '',
@@ -78,9 +78,9 @@ class CreateProfile extends Component {
         company: profile.company,
         website: profile.website,
         location: profile.location,
-        status: profile.status,
+        profession: profile.profession,
         skills: skillsCSV,
-        
+        language: profile.language,
         bio: profile.bio,
         twitter: profile.twitter,
         facebook: profile.facebook,
@@ -99,9 +99,9 @@ class CreateProfile extends Component {
       company: this.state.company,
       website: this.state.website,
       location: this.state.location,
-      status: this.state.status,
+      profession: this.state.profession,
       skills: this.state.skills,
-      
+      language: this.state.language,
       bio: this.state.bio,
       twitter: this.state.twitter,
       facebook: this.state.facebook,
@@ -173,17 +173,21 @@ class CreateProfile extends Component {
       );
     }
 
-    // Select options for status
+    // Select options for profession
     const options = [
-      { label: '* Select Professional Status', value: 0 },
+      { label: '* Select Profession', value: 0 },
+      { label: 'Caterer', value: 'Caterer' },
+      { label: 'Comedian', value: 'Comedian' },
       { label: 'DJ', value: 'DJ' },
-      { label: 'Photographer', value: 'Photographer' },
-      { label: 'Videographer', value: 'Videographer' },
       { label: 'Emcee', value: 'Emcee' },
-      { label: 'Band/Musician', value: 'Band/Musician' },
+      { label: 'Musician- Band', value: 'Musician- Band' },
+      { label: 'Musician- Instrument Soloist', value: 'Musician- Instrument Soloist' },
+      { label: 'Musician- Singer ', value: 'Musician- Singer ' },
+      { label: 'Photo Booth', value: 'Photo Booth' },
+      { label: 'Photographer', value: 'Photographer' },
+      { label: 'Security', value: 'Security' },
       { label: 'Stylist', value: 'Stylist' },
-      { label: 'Security Specialist', value: 'Security Specialist' },
-      { label: 'Caterer', value: 'Caterer' }
+      { label: 'Videographer', value: 'Videographer' }
     ];
 
     return (
@@ -206,13 +210,13 @@ class CreateProfile extends Component {
                   info="A unique handle for your profile URL. Your full name, company name, nickname"
                 />
                 <SelectListGroup
-                  placeholder="Status"
-                  name="status"
-                  value={this.state.status}
+                  placeholder="Profession"
+                  name="profession"
+                  value={this.state.profession}
                   onChange={this.onChange}
                   options={options}
-                  error={errors.status}
-                  info="Give us an idea of where you are at in your career"
+                  error={errors.profession}
+                  info="Let us know your profession"
                 />
                 <TextFieldGroup
                   placeholder="Company"
@@ -239,22 +243,22 @@ class CreateProfile extends Component {
                   info="City or city & state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
-                  placeholder="* Skills"
+                  placeholder="Skills"
                   name="skills"
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                    good with kids, specialize in large groups, etc.)"
                 />
                 
-                <TextAreaFieldGroup
-                  placeholder="Short Bio"
-                  name="bio"
-                  value={this.state.bio}
+                <TextFieldGroup
+                  placeholder="Language(s)"
+                  name="language"
+                  value={this.state.language}
                   onChange={this.onChange}
-                  error={errors.bio}
-                  info="Tell us a little about yourself"
+                  error={errors.language}
+                  info="Let us know if you are fluent in other languages."
                 />
 
                 <div className="mb-3">

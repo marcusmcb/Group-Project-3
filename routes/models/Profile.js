@@ -20,17 +20,19 @@ const ProfileSchema = new Schema({
      location: {
           type: String,
      },
-     status: {
+     profession: {
           type: String,
           required: true
      },
      skills: {
           type: [String],
-          required: true
      },
-     bio: {
+<<<<<<< HEAD
+=======
+     language: {
           type: String,
      },
+>>>>>>> aa6f5a976b255b0f614c891c6f878fae6fed8528
      experience: [
           {
                title: {
