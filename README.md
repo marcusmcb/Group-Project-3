@@ -1,47 +1,25 @@
-# Group Project 3
+# Eventagious
 
-### Front-End NPM packages - need to be installed in the 'client' folder:
+### Welcome to Eventagious!
 
-* npm init -y
-* npm i axios
-* npm i classnames
-* npm i jwt-decode
-* npm i moment
-* npm i react
-* npm i react-dom
-* npm i react-moment
-* npm i react-redux
-* npm i react-router-dom
-* npm i react-scripts
-* npm i redux
-* npm i redux-thunk
+This app is a social media and networking app for event professionals - DJs, emcees, photographers, stylists, security specialists, videographers, etc - to link up with one another as well as book events through event planners and coordinators through the app.
 
-#### You will also need to insert the following line in your client folder's package.json file (can be placed anywhere):
+### Link To The App:
 
-"proxy": "http://localhost:5000"
+https://dashboard.heroku.com/apps/mysterious-oasis-22555
 
-### Back-End NPM packages - need to be installed in the main/root folder:
+This is a full-stack MERN application that was developed in part with the following:
 
-* npm init -y
-* npm i bcryptjs
-* npm i body-parser
-* npm i concurrently
-* npm i express
-* npm i gravatar
-* npm i jsonwebtoken
-* npm i mongoose
-* npm i passport
-* npm i passport-jwt
-* npm i validator
+MongoDB
+NodeJS
+Express
+React/Redux
 
-#### Under scripts you will need to add the following lines:
+Built as part of UCI's coding bootcamp by:
 
-* "client-install": "npm install --prefix client"
-* "client": "npm start --prefix client"
-* "dev": "concurrently \"npm run server\" \"npm run client\""
+* Marcus McBride
+* Tanya Schwartz
+* Hope Gratrix
+* Ray Curry, III
 
-
-
-
-
-
+2018.
