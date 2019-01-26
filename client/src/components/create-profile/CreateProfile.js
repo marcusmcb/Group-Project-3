@@ -21,6 +21,7 @@ class CreateProfile extends Component {
       professionInput: '',
       skills: '',
       language: '',
+      bio: '',
       twitter: '',
       facebook: '',
       linkedin: '',
@@ -51,6 +52,7 @@ class CreateProfile extends Component {
       profession: this.state.profession,
       skills: this.state.skills,
       language: this.state.language,
+      bio: this.state.bio,
       twitter: this.state.twitter,
       facebook: this.state.facebook,
       linkedin: this.state.linkedin,
@@ -231,6 +233,15 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.language}
                   info="Let us know if you are fluent in other languages."
+                />
+
+                <TextFieldGroup
+                  placeholder="Bio"
+                  name="bio"
+                  value={this.state.bio}
+                  onChange={this.onChange}
+                  error={errors.bio}
+                  info="Tell us a little bit about your work as an event professional."
                 />
 
                 <div className="mb-3">

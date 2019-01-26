@@ -248,8 +248,7 @@ class CreateProfile extends Component {
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
-                  info="Please use comma separated values (eg.
-                    good with kids, specialize in large groups, etc.)"
+                  info="Please use comma separated values (good with kids, specialize in large events, etc.)"
                 />
                 
                 <TextFieldGroup
@@ -259,6 +258,15 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.language}
                   info="Let us know if you are fluent in other languages."
+                />
+
+                <TextFieldGroup
+                  placeholder="Bio"
+                  name="bio"
+                  value={this.state.bio}
+                  onChange={this.onChange}
+                  error={errors.bio}
+                  info="Tell us a little bit about your work as an event professional."
                 />
 
                 <div className="mb-3">

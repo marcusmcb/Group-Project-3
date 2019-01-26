@@ -109,6 +109,7 @@ router.post(
           if (req.body.location) profileFields.location = req.body.location;
           if (req.body.profession) profileFields.profession = req.body.profession;
           if (req.body.language) profileFields.language = req.body.language;
+          if (req.body.bio) profileFields.bio = req.body.bio;
           // Skills - Spilt into array
           if (typeof req.body.skills !== 'undefined') {
                profileFields.skills = req.body.skills.split(',');

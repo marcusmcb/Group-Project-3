@@ -27,12 +27,12 @@ const ProfileSchema = new Schema({
      skills: {
           type: [String],
      },
-<<<<<<< HEAD
-=======
      language: {
           type: String,
      },
->>>>>>> aa6f5a976b255b0f614c891c6f878fae6fed8528
+     bio: {
+          type: String,
+     },
      experience: [
           {
                title: {
