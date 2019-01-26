@@ -170,78 +170,82 @@ class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Create Your Profile</h1>
-              <p className="lead text-center">
+              <h1 className="display-4 text-center text-white">Create Your Profile</h1>
+              <p className="lead text-center text-white">
                 Let's get some information to make your profile stand out
               </p>
-              <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-3 text-white">* = required fields</small>
               <form onSubmit={this.onSubmit}>
+                <small className="text-white">A unique handle for your profile URL.</small>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
                   name="handle"
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname"
                 />
+
+                <small className="text-white">Your primary event profession.</small>
                 <SelectListGroup
                   placeholder="Profession"
-                  name="professionInput"
-                  value={this.state.professionInput}
-                  onChange={this.onChangeProfession}
+                  name="profession"
+                  value={this.state.profession}
+                  onChange={this.onChange}
                   options={options}
                   error={errors.profession}
-                  info="Your primary event profession."
                 />
-                {professionInput}
+
+                <small className="text-white">Your own company or the one you currently work for.</small>
                 <TextFieldGroup
                   placeholder="Company"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
-                  info="Your own company or the one you currently work for"
                 />
+
+                <small className="text-white">Your site or your company's site</small>
                 <TextFieldGroup
                   placeholder="Website"
                   name="website"
                   value={this.state.website}
                   onChange={this.onChange}
-                  error={errors.website}
-                  info="Your own site or the one for the company you currently work for"
-                />
+                  error={errors.website} />
+
+                <small className="text-white">City or region (eg, Boston, MA, Southern California)</small>
                 <TextFieldGroup
                   placeholder="Location"
                   name="location"
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City or city and state suggested (eg. Boston, MA)"
                 />
+
+                <small className="text-white">Please use comma-separated values (good with kids, specialize in large events, etc)</small>
                 <TextFieldGroup
                   placeholder="Skills"
                   name="skills"
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
-                  info="Please use comma separated values (good with kids, specialize in large groups, etc.)"
                 />
+
+                <small className="text-white">Let us know what languages you are fluent in.</small>
                 <TextFieldGroup
                   placeholder="Language(s)"
                   name="language"
                   value={this.state.language}
                   onChange={this.onChange}
                   error={errors.language}
-                  info="Let us know which languages you are fluent in."
                 />
 
+                <small className="text-white">Tell us a bit more about your work as an event professional.</small>
                 <TextAreaFieldGroup
                   placeholder="Bio"
                   name="bio"
                   value={this.state.bio}
                   onChange={this.onChange}
                   error={errors.bio}
-                  info="Tell us a little bit about your work as an event professional."
                 />
 
                 <div className="mb-3">
@@ -252,11 +256,11 @@ class CreateProfile extends Component {
                         displaySocialInputs: !prevState.displaySocialInputs
                       }));
                     }}
-                    className="btn btn-light"
+                    className="btn btn-secondary"
                   >
                     Add Social Network Links
                   </button>
-                  <span className="text-muted">Optional</span>
+                  <span className="text-white ml-3">(Optional)</span>
                 </div>
                 {socialInputs}
                 <input

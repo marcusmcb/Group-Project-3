@@ -23,7 +23,7 @@ class ProfileAbout extends Component {
             <h3 className="text-center text-info">About {firstName}</h3>
             <p className="lead text-center" style={{ whiteSpace: 'pre-wrap' }}>
               {isEmpty(profile.bio) ? (
-                <span>{firstName} does not have a bio.</span>
+                <span className="text-white">{firstName} does not have a bio.</span>
               ) : (
                 <span>{profile.bio}</span>
               )}

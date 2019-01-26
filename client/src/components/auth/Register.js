@@ -57,8 +57,8 @@ class Register extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">
+              <h1 className="display-4 text-center text-white">Sign Up</h1>
+              <p className="lead text-center text-white">
                 Create your Eventageous account
               </p>
               <form noValidate onSubmit={this.onSubmit}>
@@ -69,14 +69,15 @@ class Register extends Component {
                   onChange={this.onChange}
                   error={errors.name}
                 />
+
+                <small className="text-white">This site uses Gravatar so if you want a profile image, use a Gravatar email</small>
                 <TextFieldGroup
                   placeholder="Email"
                   name="email"
                   type="email"
                   value={this.state.email}
                   onChange={this.onChange}
-                  error={errors.email}
-                  info="This site uses Gravatar so if you want a profile image, use a Gravatar email"
+                  error={errors.email}                  
                 />
                 <TextFieldGroup
                   placeholder="Password"

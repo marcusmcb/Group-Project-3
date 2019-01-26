@@ -39,12 +39,14 @@ class ProfileCreds extends Component {
     return (
       <div className="row">
         <div className="col-md-12">
+        <div className="card card-body bg-light mb-3">
           <h3 className="text-center text-info">Experience</h3>
           {expItems.length > 0 ? (
             <ul className="list-group">{expItems}</ul>
           ) : (
-            <p className="text-center">No Experience Listed</p>
+            <p className="text-center text-black">No Experience Listed</p>
           )}
+        </div>
         </div>
       </div>
     );

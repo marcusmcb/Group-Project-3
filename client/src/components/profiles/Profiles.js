@@ -26,7 +26,7 @@ class Profiles extends Component {
     } else {
       
       if (profiles.length > 0) {
-        console.log(this.state.searchTerm)
+
         profiles.forEach(profile => {
           // profiles search function
           let tmpAr = profile.skills.slice(0);
@@ -41,8 +41,9 @@ class Profiles extends Component {
             profileItems.push(<ProfileItem key={profile._id} profile={profile} />)
           } 
         });
+        
       } else {
-        profileItems = <h4>No profiles found.</h4>;
+        profileItems = <h4 className="text-white">No profiles found.</h4>;
       }
     }
 
@@ -51,8 +52,8 @@ class Profiles extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-8 text-center">Event Professionals</h1>
-              <p className="lead text-center">
+              <h1 className="display-8 text-center text-white">Event Professionals</h1>
+              <p className="lead text-center text-white">
                 Browse and connect with other Eventageous members.
               </p>
               <ProfilesSearch handleSearch={e => this.setState({ searchTerm: e })} />

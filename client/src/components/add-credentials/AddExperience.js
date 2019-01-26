@@ -70,8 +70,8 @@ class AddExperience extends Component {
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 className="display-4 text-center">Add Experience</h1>
-              <p className="lead text-center">
+              <h1 className="display-4 text-center text-white">Add Experience</h1>
+              <p className="lead text-center text-white">
                 Add any job or position that you have had in the past or current
               </p>
               <small className="d-block pb-3">* = required fields</small>
@@ -97,7 +97,7 @@ class AddExperience extends Component {
                   onChange={this.onChange}
                   error={errors.location}
                 />
-                <h6>From Date</h6>
+                <h6 className="text-white">From Date</h6>
                 <TextFieldGroup
                   name="from"
                   type="date"
@@ -105,7 +105,7 @@ class AddExperience extends Component {
                   onChange={this.onChange}
                   error={errors.from}
                 />
-                <h6>To Date</h6>
+                <h6 className="text-white">To Date</h6>
                 <TextFieldGroup
                   name="to"
                   type="date"
@@ -124,17 +124,17 @@ class AddExperience extends Component {
                     onChange={this.onCheck}
                     id="current"
                   />
-                  <label htmlFor="current" className="form-check-label">
+                  <label htmlFor="current" className="form-check-label text-white">
                     Current Job
                   </label>
                 </div>
+                <small className="text-white mb-2">Tell us about your work here.</small>
                 <TextAreaFieldGroup
                   placeholder="Job Description"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}
-                  error={errors.description}
-                  info="Tell us about the the position"
+                  error={errors.description}                  
                 />
                 <input
                   type="submit"
