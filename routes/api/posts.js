@@ -55,6 +55,7 @@ router.post(
           const newPost = new Post({
                text: req.body.text,
                name: req.body.name,
+               handle: req.body.handle,
                avatar: req.body.avatar,
                user: req.user.id
           });
@@ -172,6 +173,7 @@ router.post(
                     const newComment = {
                          text: req.body.text,
                          name: req.body.name,
+                         handle: req.body.handle,
                          avatar: req.body.avatar,
                          user: req.user.id
                     };

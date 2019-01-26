@@ -6,7 +6,6 @@ import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/profileActions';
 import ProfilesSearch from '../profiles/ProfilesSearch';
 import DropDown from './DropDown'
-import { timingSafeEqual } from 'crypto';
 
 class Profiles extends Component {
   componentDidMount() {

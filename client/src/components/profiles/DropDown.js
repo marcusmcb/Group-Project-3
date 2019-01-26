@@ -7,7 +7,7 @@ class DropDown extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: 'Filter by Profession'
+            title: 'Filter By Event Specialty'
         };
     }
 
@@ -51,6 +51,7 @@ class DropDown extends Component {
         }
 
         return (
+            <div className="container pb-3 text-center">
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {this.state.title}
@@ -59,6 +60,7 @@ class DropDown extends Component {
                     {options}
                     <option className="dropdown-item" onClick={this.showAll} key="showAll" value="showAll">Show All</option>
                 </div>
+            </div>
             </div>
         )
     }

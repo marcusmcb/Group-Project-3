@@ -216,15 +216,16 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   options={options}
                   error={errors.profession}
-                  info="Let us know your profession"
+                  info="Your primary event profession."
                 />
+                
                 <TextFieldGroup
                   placeholder="Company"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
-                  info="Could be your own company or one you work for"
+                  info="Your own company or the one you currently work for."
                 />
                 <TextFieldGroup
                   placeholder="Website"
@@ -232,7 +233,7 @@ class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own website or a company one"
+                  info="Your own site or the one for the company you currently work for."
                 />
                 <TextFieldGroup
                   placeholder="Location"
@@ -240,7 +241,7 @@ class CreateProfile extends Component {
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City or city & state suggested (eg. Boston, MA)"
+                  info="City or city and state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
                   placeholder="Skills"
@@ -249,18 +250,16 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (good with kids, specialize in large events, etc.)"
-                />
-                
+                />                
                 <TextFieldGroup
                   placeholder="Language(s)"
                   name="language"
                   value={this.state.language}
                   onChange={this.onChange}
                   error={errors.language}
-                  info="Let us know if you are fluent in other languages."
+                  info="Let us know which languages you are fluent in."
                 />
-
-                <TextFieldGroup
+                <TextAreaFieldGroup
                   placeholder="Bio"
                   name="bio"
                   value={this.state.bio}
@@ -268,7 +267,6 @@ class CreateProfile extends Component {
                   error={errors.bio}
                   info="Tell us a little bit about your work as an event professional."
                 />
-
                 <div className="mb-3">
                   <button
                     type="button"

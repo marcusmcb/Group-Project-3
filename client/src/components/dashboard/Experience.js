@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import { deleteExperience, getCurrentExperience } from '../../actions/profileActions';
+import { deleteExperience } from '../../actions/profileActions';
 import '../../App.css';
 
 class Experience extends Component {
@@ -26,12 +26,7 @@ class Experience extends Component {
             <Moment format="MM/DD/YYYY">{exp.to}</Moment>
           )}
         </td>
-        {/* <td>
-          <button
-            onClick={this.onEditClick.bind(this, exp._id)}
-            className="btn btn-outline-secondary">
-            Edit</button>
-        </td> */}
+        
         <td>
           <button
             onClick={this.onDeleteClick.bind(this, exp._id)}
@@ -62,7 +57,7 @@ class Experience extends Component {
 
 Experience.propTypes = {
   deleteExperience: PropTypes.func.isRequired,
-  getCurrentExperience: PropTypes.func.isRequired
+  
 };
 
-export default connect(null, { deleteExperience, getCurrentExperience })(Experience);
+export default connect(null, { deleteExperience })(Experience);

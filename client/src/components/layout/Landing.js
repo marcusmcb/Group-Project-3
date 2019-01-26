@@ -17,7 +17,7 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">Eventageous</h1>
+                <h1 className="display-6 mb-4">Eventageous</h1>
                 <p className="lead">
                   {' '}
                   A social media and networking site for event professionals.

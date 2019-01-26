@@ -15,6 +15,10 @@ const UserSchema = new Schema({
           type: String,
           required: true
      },
+     handle: {
+          type: String,
+          required: true
+     },
      avatar: {
           type: String,
      },
