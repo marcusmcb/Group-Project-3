@@ -2,16 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles } from '../../actions/profileActions';
-import DropDownItem from './DropDownItem'
 
 class DropDown extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: 'Filter by Profession'
+        };
+    }
+
     //Gets Profiles
     componentDidMount() {
         this.props.getProfiles()
     }
+
+    profileSearch = (e) => {
+        this.setState({ title: e.target.value })
+        this.props.handleProfession(e.target.value.toLowerCase());
+    }
+
+    showAll = () => {
+        this.setState({ title: 'Filter by Profession' })
+        this.props.handleProfession('');
+    }
+
     render () {
         const { profiles } = this.props.profile;
-        // let labels = ['DJ', 'Caterer', 'Comedian', 'Emcee', 'Musician-Band', 'Musician- Instrument Soloist', 'Musician- Singer', 'Photo Booth', 'Photographer', 'Security', 'Stylist', 'Videographer']
         let labels = []
         let options = []
 
@@ -23,24 +39,25 @@ class DropDown extends Component {
         else if (profiles.length>0) {
             profiles.forEach(profile => {
                 if (labels.indexOf(profile.profession) === -1) {
-                    labels.push(profile.profession)
+                labels.push(profile.profession)
                 }
             });
             //alphabetizes the array
-            labels.sort()
+            labels.sort();
             //creates drop down options
-            labels.forEach(option => {
-                options.push(<DropDownItem key={option} profile={option} />)
+            labels.forEach(label => {
+                options.push(<option className="dropdown-item" onClick={this.profileSearch} key={labels.indexOf(label)} value={label}>{label}</option>)
             })
         }
 
         return (
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Narrow Results by Profession
+                    {this.state.title}
                 </button>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <div className="dropdown-menu" onSelect={this.profileSearch} aria-labelledby="dropdownMenu2">
                     {options}
+                    <option className="dropdown-item" onClick={this.showAll} key="showAll" value="showAll">Show All</option>
                 </div>
             </div>
         )

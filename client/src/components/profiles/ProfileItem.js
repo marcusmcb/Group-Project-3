@@ -26,6 +26,11 @@ class ProfileItem extends Component {
                 <span>{profile.location}</span>
               )}
             </p>
+            <p>
+              {isEmpty(profile.language) ? null : (
+                <span>Speaks: {profile.language}</span>
+              )}
+            </p>
             <Link to={`/profile/${profile.handle}`} className="btn btn-info">
               View Profile
             </Link>

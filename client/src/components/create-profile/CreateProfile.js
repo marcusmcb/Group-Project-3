@@ -66,10 +66,8 @@ class CreateProfile extends Component {
   }
 
   onChangeProfession = e => {
-    console.log(e.target.value)
     this.setState({ [e.target.name]: e.target.value });
     if ( e.target.value === 'Other' ) {
-      console.log('other')
       this.setState({ displayOtherProfession: true });
     } else {
       this.setState({ profession: e.target.value})
@@ -224,7 +222,7 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg.
-                    good with kids, specialize in large groups, etc."
+                    good with kids, specialize in large groups, etc.)"
                 />
                 <TextFieldGroup
                   placeholder="Language(s)"
