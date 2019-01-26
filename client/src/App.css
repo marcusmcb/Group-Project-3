@@ -59,11 +59,3 @@ img {
 .UserAvatar--light .UserAvatar--inner {
   border: 1px solid lightgray;
 }
-
-#AvatarHeader {
-  align-content: center;
-}
-
-.table-nonfluid {
-   width: auto !important;
-}

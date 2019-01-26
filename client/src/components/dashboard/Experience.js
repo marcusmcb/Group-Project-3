@@ -26,16 +26,16 @@ class Experience extends Component {
             <Moment format="MM/DD/YYYY">{exp.to}</Moment>
           )}
         </td>
-        <td>
+        {/* <td>
           <button
             onClick={this.onEditClick.bind(this, exp._id)}
-            className="btn btn-secondary">
+            className="btn btn-outline-secondary">
             Edit</button>
-        </td>
+        </td> */}
         <td>
           <button
             onClick={this.onDeleteClick.bind(this, exp._id)}
-            className="btn btn-danger">
+            className="btn btn-outline-danger">
           Delete</button>
         </td>
       </tr>

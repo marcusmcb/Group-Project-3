@@ -49,7 +49,7 @@ class Profiles extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-6 text-center">Event Professionals</h1>
+              <h1 className="display-8 text-center">Event Professionals</h1>
               <p className="lead text-center">
                 Browse and connect with other Eventageous members.
               </p>
