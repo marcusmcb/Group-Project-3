@@ -6,7 +6,7 @@ This app is a social media and networking app for event professionals - DJs, emc
 
 ### Link To The App:
 
-https://dashboard.heroku.com/apps/mysterious-oasis-22555
+http://www.eventageousapp.com
 
 This is a full-stack MERN application that was developed in part with the following:
 
