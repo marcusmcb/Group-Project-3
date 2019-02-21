@@ -12,11 +12,11 @@ http://www.eventageousapp.com
 
 This is a full-stack MERN application that was developed in part with the following:
 
-MongoDB
-NodeJS
-Express
-React/Redux
-Various NPM Packages
+* MongoDB
+* NodeJS
+* Express
+* React/Redux
+* Various NPM Packages
 
 Eventageous was built as part of a group project for UCI's coding bootcamp by the following:
 
